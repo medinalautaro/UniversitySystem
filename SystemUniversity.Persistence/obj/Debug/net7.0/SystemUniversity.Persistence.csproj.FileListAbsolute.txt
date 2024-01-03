@@ -1,0 +1,15 @@
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\bin\Debug\net7.0\SystemUniversity.Persistence.deps.json
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\bin\Debug\net7.0\SystemUniversity.Persistence.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\bin\Debug\net7.0\SystemUniversity.Persistence.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\bin\Debug\net7.0\SystemUniversity.Contracts.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\bin\Debug\net7.0\SystemUniversity.Contracts.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.csproj.AssemblyReference.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.AssemblyInfoInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.AssemblyInfo.cs
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.csproj.CopyComplete
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\refint\SystemUniversity.Persistence.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\SystemUniversity.Persistence.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Persistence\obj\Debug\net7.0\ref\SystemUniversity.Persistence.dll

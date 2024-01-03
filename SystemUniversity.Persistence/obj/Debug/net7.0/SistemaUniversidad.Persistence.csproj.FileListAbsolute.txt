@@ -1,0 +1,15 @@
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\bin\Debug\net7.0\SistemaUniversidad.Persistence.deps.json
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\bin\Debug\net7.0\SistemaUniversidad.Persistence.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\bin\Debug\net7.0\SistemaUniversidad.Persistence.pdb
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\bin\Debug\net7.0\SistemaUniversidad.Contracts.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\bin\Debug\net7.0\SistemaUniversidad.Contracts.pdb
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.csproj.AssemblyReference.cache
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.AssemblyInfoInputs.cache
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.AssemblyInfo.cs
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.csproj.CopyComplete
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\refint\SistemaUniversidad.Persistence.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\SistemaUniversidad.Persistence.pdb
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Persistence\obj\Debug\net7.0\ref\SistemaUniversidad.Persistence.dll

@@ -1,0 +1,11 @@
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\bin\Debug\net7.0\SistemaUniversidad.Contracts.deps.json
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\bin\Debug\net7.0\SistemaUniversidad.Contracts.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\bin\Debug\net7.0\SistemaUniversidad.Contracts.pdb
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.AssemblyInfoInputs.cache
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.AssemblyInfo.cs
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\refint\SistemaUniversidad.Contracts.dll
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\SistemaUniversidad.Contracts.pdb
+C:\Users\laum_\proyecto\SistemaUniversidad\SistemaUniversidad.Contracts\obj\Debug\net7.0\ref\SistemaUniversidad.Contracts.dll

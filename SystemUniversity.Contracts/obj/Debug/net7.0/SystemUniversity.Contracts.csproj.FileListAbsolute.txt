@@ -1,0 +1,11 @@
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.AssemblyInfoInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.AssemblyInfo.cs
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.csproj.CoreCompileInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\bin\Debug\net7.0\SystemUniversity.Contracts.deps.json
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\bin\Debug\net7.0\SystemUniversity.Contracts.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\bin\Debug\net7.0\SystemUniversity.Contracts.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\refint\SystemUniversity.Contracts.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\SystemUniversity.Contracts.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Contracts\obj\Debug\net7.0\ref\SystemUniversity.Contracts.dll

@@ -1,0 +1,244 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Console\\SistemaUniversidad.Console.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Console\\SistemaUniversidad.Console.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Console\\SistemaUniversidad.Console.csproj",
+        "projectName": "SistemaUniversidad.Console",
+        "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Console\\SistemaUniversidad.Console.csproj",
+        "packagesPath": "C:\\Users\\laum_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Console\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\laum_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj": {
+                "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj"
+              },
+              "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\SistemaUniversidad.Services.csproj": {
+                "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\SistemaUniversidad.Services.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj",
+        "projectName": "SistemaUniversidad.Contracts",
+        "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj",
+        "packagesPath": "C:\\Users\\laum_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\laum_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\SistemaUniversidad.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\SistemaUniversidad.Persistence.csproj",
+        "projectName": "SistemaUniversidad.Persistence",
+        "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\SistemaUniversidad.Persistence.csproj",
+        "packagesPath": "C:\\Users\\laum_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\laum_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj": {
+                "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\SistemaUniversidad.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\SistemaUniversidad.Services.csproj",
+        "projectName": "SistemaUniversidad.Services",
+        "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\SistemaUniversidad.Services.csproj",
+        "packagesPath": "C:\\Users\\laum_\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\laum_\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj": {
+                "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Contracts\\SistemaUniversidad.Contracts.csproj"
+              },
+              "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\SistemaUniversidad.Persistence.csproj": {
+                "projectPath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SistemaUniversidad.Persistence\\SistemaUniversidad.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.403\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

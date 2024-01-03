@@ -1,0 +1,17 @@
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Services.deps.json
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Services.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Services.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Contracts.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Persistence.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Contracts.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\bin\Debug\net7.0\SystemUniversity.Persistence.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.csproj.AssemblyReference.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.AssemblyInfoInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.AssemblyInfo.cs
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.csproj.CoreCompileInputs.cache
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.csproj.CopyComplete
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\refint\SystemUniversity.Services.dll
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\SystemUniversity.Services.pdb
+C:\Users\laum_\proyecto\SystemUniversity\SystemUniversity.Services\obj\Debug\net7.0\ref\SystemUniversity.Services.dll

@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "CdBCdyJigUCjqxbvCYOdQX9CaAdAkEFbBy6gJ2t017lhvp4/mPjo76VzLE2o7u17IFQbBAL2T9zzexOA51LYpw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\laum_\\proyecto\\SystemUniversity\\SystemUniversity.Console\\SystemUniversity.Console.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\laum_\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\laum_\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\8.0.0\\microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
+    "C:\\Users\\laum_\\.nuget\\packages\\npgsql\\8.0.1\\npgsql.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
