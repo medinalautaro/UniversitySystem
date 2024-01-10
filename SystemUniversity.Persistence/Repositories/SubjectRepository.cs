@@ -53,7 +53,7 @@ namespace SystemUniversity.Persistence.Repositories
 
         public async Task<Subject?> GetByIdAsync(int id)
         {
-            string query = "SELECT (name,id) FROM university.subjects WHERE id = $1";
+            string query = "SELECT name,id FROM university.subjects WHERE id = $1";
 
             using NpgsqlDataReader reader = await GetQueryReaderAsync(query, new object[] { id });
 

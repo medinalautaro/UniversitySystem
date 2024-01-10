@@ -12,6 +12,7 @@ namespace SystemUniversity.Contracts.Models{
         public Subject(string name, int? id = null)
         {
             this.Name = name;
+            this.Id = id ?? 0;
         }
     }
 }

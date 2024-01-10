@@ -43,18 +43,18 @@ class Programa
                     CrearAlumnosPrueba();
                     break;
                 case 4:
-                    Database.Subjects.RegisterProfessorAsync(27, 4);
-                    Database.Subjects.RegisterProfessorAsync(28, 4);
-                    Database.Subjects.RegisterProfessorAsync(29, 4);
+                    Database.GetInstance().Subjects.RegisterProfessorAsync(27, 4);
+                    Database.GetInstance().Subjects.RegisterProfessorAsync(28, 4);
+                    Database.GetInstance().Subjects.RegisterProfessorAsync(29, 4);
                     break;
                 case 5:
-                    Database.Subjects.RegisterStudentAsync(35, 4);
-                    Database.Subjects.RegisterStudentAsync(31, 4);
-                    Database.Subjects.RegisterStudentAsync(32, 4);
-                    Database.Subjects.RegisterStudentAsync(37, 4);
+                    Database.GetInstance().Subjects.RegisterStudentAsync(35, 4);
+                    Database.GetInstance().Subjects.RegisterStudentAsync(31, 4);
+                    Database.GetInstance().Subjects.RegisterStudentAsync(32, 4);
+                    Database.GetInstance().Subjects.RegisterStudentAsync(37, 4);
                     break;
                 case 6:
-                    Database.Students.SelectAllAsync();
+                    Database.GetInstance().Students.SelectAllAsync();
                     break;
                 case 7:
                     break;
@@ -73,33 +73,33 @@ class Programa
         }
 
         void CrearMateriasPrueba(){
-            Database.Subjects.CreateAsync(new Subject("Matematica"));
-            Database.Subjects.CreateAsync(new Subject("Fisica"));
-            Database.Subjects.CreateAsync(new Subject("Historia"));
+            Database.GetInstance().Subjects.CreateAsync(new Subject("Matematica"));
+            Database.GetInstance().Subjects.CreateAsync(new Subject("Fisica"));
+            Database.GetInstance().Subjects.CreateAsync(new Subject("Historia"));
         }
         
         void CrearProfesoresPrueba(){
-            Database.Professors.CreateAsync(new Professor("Jorge", "Batidor", "123456789"));
-            Database.Professors.CreateAsync(new Professor("Raul", "Salamandra", "987654321"));
-            Database.Professors.CreateAsync(new Professor("Jose", "Meconio", "234567890"));
-            Database.Professors.CreateAsync(new Professor("Jerardo", "Rivas", "876543210"));
-            Database.Professors.CreateAsync(new Professor("Miguel", "Almirante", "345678901"));
+            Database.GetInstance().Professors.CreateAsync(new Professor("Jorge", "Batidor", "123456789"));
+            Database.GetInstance().Professors.CreateAsync(new Professor("Raul", "Salamandra", "987654321"));
+            Database.GetInstance().Professors.CreateAsync(new Professor("Jose", "Meconio", "234567890"));
+            Database.GetInstance().Professors.CreateAsync(new Professor("Jerardo", "Rivas", "876543210"));
+            Database.GetInstance().Professors.CreateAsync(new Professor("Miguel", "Almirante", "345678901"));
         }
 
         void CrearAlumnosPrueba(){
-            Database.Students.CreateAsync(new Student("Carolina", "Gimenez", "789012345"));
-            Database.Students.CreateAsync(new Student("Milagros", "Lassy", "456789012"));
-            Database.Students.CreateAsync(new Student("Misty", "Mountains", "890123456"));
-            Database.Students.CreateAsync(new Student("Mirta", "Legrand", "567890123"));
-            Database.Students.CreateAsync(new Student("Manuel", "Portillo", "901234567"));
-            Database.Students.CreateAsync(new Student("Fran", "Clarison", "654321098"));
-            Database.Students.CreateAsync(new Student("Fede", "Porton", "109876543"));
-            Database.Students.CreateAsync(new Student("Lautaro", "Smith", "321098765"));
-            Database.Students.CreateAsync(new Student("Pedro", "Barras", "765432109"));
-            Database.Students.CreateAsync(new Student("Mateo", "Boquita", "210987654"));
-            Database.Students.CreateAsync(new Student("Jonathan", "Miles", "543210987"));
-            Database.Students.CreateAsync(new Student("Sashimi", "Paso", "876543210"));
-            Database.Students.CreateAsync(new Student("Monociclo", "Gutierras", "234567890"));
+            Database.GetInstance().Students.CreateAsync(new Student("Carolina", "Gimenez", "789012345"));
+            Database.GetInstance().Students.CreateAsync(new Student("Milagros", "Lassy", "456789012"));
+            Database.GetInstance().Students.CreateAsync(new Student("Misty", "Mountains", "890123456"));
+            Database.GetInstance().Students.CreateAsync(new Student("Mirta", "Legrand", "567890123"));
+            Database.GetInstance().Students.CreateAsync(new Student("Manuel", "Portillo", "901234567"));
+            Database.GetInstance().Students.CreateAsync(new Student("Fran", "Clarison", "654321098"));
+            Database.GetInstance().Students.CreateAsync(new Student("Fede", "Porton", "109876543"));
+            Database.GetInstance().Students.CreateAsync(new Student("Lautaro", "Smith", "321098765"));
+            Database.GetInstance().Students.CreateAsync(new Student("Pedro", "Barras", "765432109"));
+            Database.GetInstance().Students.CreateAsync(new Student("Mateo", "Boquita", "210987654"));
+            Database.GetInstance().Students.CreateAsync(new Student("Jonathan", "Miles", "543210987"));
+            Database.GetInstance().Students.CreateAsync(new Student("Sashimi", "Paso", "876543210"));
+            Database.GetInstance().Students.CreateAsync(new Student("Monociclo", "Gutierras", "234567890"));
         }
 
         

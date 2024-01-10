@@ -49,13 +49,14 @@ namespace SystemUniversity.Persistence.Repositories
                 if(parameters != null) {
                     command.Parameters.AddRange(parameters.Select(x => new NpgsqlParameter(null, x)).ToArray());
                 }
-                RetType? scalar = (RetType?)await command.ExecuteScalarAsync();
+                object? scalar = await command.ExecuteScalarAsync();
 
                 if (scalar == null)
                 {
                     throw new Exception("Query could not execute");
                 }
-                return scalar;
+                
+                return (RetType)scalar;
             }
         }
 

@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Http.Features;
 using Microsoft.AspNetCore.Mvc;
 using SystemUniversity.API.DTOs.Requests;
 using SystemUniversity.API.DTOs.Responses;
@@ -28,21 +29,72 @@ namespace SystemUniversity.API.Controllers
             };
         }
 
-        
-
-        
-
-        /*
-        [HttpGet("{id}")]
-        public async Task<MateriaDTO> GetByIdAsync(int id)
+        [HttpPut]
+        public async Task<ActionResult<SubjectDTO>> UpdateAsync(int subjectId, [FromBody] SubjectDTO dto)
         {
-            Materia materia = await _subjectService.GetByIdAsync(id);
-            return new MateriaDTO
+            Subject subject;
+            try{
+                subject = await _subjectService.UpdateAsync(subjectId, dto.Name);
+            } catch (KeyNotFoundException ex){
+                return NotFound(ex.Message);
+            } catch (ArgumentNullException ex){  //Argument null exception inherits from ArgumentException so it has to be catched before.
+                return BadRequest(ex.Message);
+            } catch (ArgumentException ex){
+                return BadRequest(ex.Message);
+            } 
+            
+            return new SubjectDTO 
             {
-                ID = materia.Id,
-                Nombre = materia.Nombre,
+                Id = subject.Id,
+                Name = subject.Name,
             };
         }
-        */
+
+        [HttpDelete]
+        public async Task<ActionResult> DeleteAsync(int subjectId)
+        {
+            try{
+                await _subjectService.DeleteAsync(subjectId);
+            } catch (KeyNotFoundException ex){
+                return NotFound(ex.Message);
+            }
+            return Ok();
+        }
+
+        [HttpGet("{id}")] // /subjects/{id}
+        public async Task<ActionResult<SubjectDTO>> GetByIdAsync(int id)
+        {
+            Subject subject;
+            
+            try{
+                subject = await _subjectService.GetByIdAsync(id);
+            } catch (KeyNotFoundException ex){
+               return NotFound(ex.Message);
+            }
+
+            return new SubjectDTO
+            {
+                Id = subject.Id,
+                Name = subject.Name,
+            };
+        }
+
+        
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<SubjectDTO>>> SelectAllAsync()
+        {
+            IEnumerable<Subject> subjects = new List<Subject>();
+            
+            try{
+                subjects = await _subjectService.SelectAllAsync();
+            } catch (KeyNotFoundException ex){
+               return NotFound(ex.Message);
+            }
+
+            return Ok(subjects.Select(s => new SubjectDTO{
+                Id = s.Id,
+                Name = s.Name,
+            }));
+        }
     }
 }

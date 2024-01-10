@@ -32,7 +32,7 @@ namespace SystemUniversity.Persistence.Repositories
 
         public async Task<Student?> GetByNationalIdAsync(int national_id)
         {
-            string query = "SELECT (name,last_name,national_id,id) FROM university.students WHERE national_id = $1";
+            string query = "SELECT name,last_name,national_id,id FROM university.students WHERE national_id = $1";
 
             using NpgsqlDataReader reader = await GetQueryReaderAsync(query, new object[] {national_id});
 
@@ -46,7 +46,7 @@ namespace SystemUniversity.Persistence.Repositories
 
         public async Task<bool> ExistsByNationalIdAsync(string national_id)
         {
-            return await ExecuteScalarAsync<bool>("SELECT FROM university.students WHERE national_id = $1", new[] { national_id });
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.students WHERE national_id = $1)", new[] { national_id });
         }
 
         public async Task<List<Student>> GetBySubjectAsync(Subject subject)
@@ -87,6 +87,25 @@ namespace SystemUniversity.Persistence.Repositories
         {
             string query = "UPDATE university.students SET name = $1, last_name = $2, national_id = $3 WHERE id = $4";
             await ExecuteNonQueryAsync(query, new object[] { entity.Name, entity.LastName, entity.NationalId, entity.Id});
+        }
+
+        public async Task<Student?> GetByIdAsync(int id)
+        {
+            string query = "SELECT name,last_name,national_id,id FROM university.students WHERE id = $1";
+
+            using NpgsqlDataReader reader = await GetQueryReaderAsync(query, new object[] { id });
+
+            if (reader.Read())
+            {
+                return MapRowToModel(reader);
+            }
+
+            return null;
+        }
+
+        public async Task<bool> ExistsByIdAsync(string id)
+        {
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.students WHERE id = $1)", new[] { id });
         }
 
         protected Student MapRowToModel(NpgsqlDataReader reader)

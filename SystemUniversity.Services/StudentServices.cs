@@ -16,7 +16,7 @@ namespace SystemUniversity.Services
         {
             await ValidateStudentAsync(studentName, lastName, nationalId);
             Student student = new Student(studentName, lastName, nationalId);
-            await Database.Students.CreateAsync(student);
+            await Database.GetInstance().Students.CreateAsync(student);
 
             return student;
         }
@@ -25,7 +25,7 @@ namespace SystemUniversity.Services
         {
             try
             {
-                await Database.Students.DeleteAsync(id);
+                await Database.GetInstance().Students.DeleteAsync(id);
             }
             catch (InvalidOperationException)
             {
@@ -35,18 +35,24 @@ namespace SystemUniversity.Services
 
         public async Task<Student> GetByNationalIdAsync(int nationalId)
         {
-            return await Database.Students.GetByNationalIdAsync(nationalId)
+            return await Database.GetInstance().Students.GetByNationalIdAsync(nationalId)
                  ?? throw new KeyNotFoundException("The National Id does not correspond to any professor");
+        }
+
+        public async Task<Student> GetByIdAsync(int id)
+        {
+            return await Database.GetInstance().Students.GetByIdAsync(id)
+                 ?? throw new KeyNotFoundException("The Id does not correspond to any course");
         }
 
         public async Task<IEnumerable<Student>> SelectAllAsync()
         {
-            return await Database.Students.SelectAllAsync();
+            return await Database.GetInstance().Students.SelectAllAsync();
         }
 
         public async Task<Student> UpdateAsync(int id, string name, string lastName, string nationalId)
         {
-            Student student = await GetByNationalIdAsync(id);
+            Student student = await GetByIdAsync(id);
 
             await ValidateStudentAsync(name, lastName, nationalId, student.NationalId != nationalId);
 
@@ -54,7 +60,7 @@ namespace SystemUniversity.Services
             student.LastName = lastName;
             student.Name = name;
 
-            await Database.Students.UpdateAsync(student);
+            await Database.GetInstance().Students.UpdateAsync(student);
 
             return student;
         }
@@ -76,7 +82,7 @@ namespace SystemUniversity.Services
                 throw new ArgumentNullException("National Id cannot be empty");
             }
             
-            if (checkIdRepeted && await Database.Students.ExistsByNationalIdAsync(nationalId))
+            if (checkIdRepeted && await Database.GetInstance().Students.ExistsByNationalIdAsync(nationalId))
             {
                 throw new ArgumentException("National Id already exists");
             }

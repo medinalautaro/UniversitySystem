@@ -15,6 +15,7 @@ namespace SystemUniversity.Contracts.Models{
             this.Name = name;
             this.LastName = lastName;
             this.NationalId = nationalId;
+            this.Id = id ?? 0;
         }
     }
 }

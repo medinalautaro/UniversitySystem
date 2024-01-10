@@ -16,7 +16,7 @@ namespace SystemUniversity.Services
         {
             ValidateSubject(name);
             Subject subject = new Subject(name);
-            await Database.Subjects.CreateAsync(subject);
+            await Database.GetInstance().Subjects.CreateAsync(subject);
 
             return subject;
         }
@@ -25,7 +25,7 @@ namespace SystemUniversity.Services
         {
             try
             {
-                await Database.Subjects.DeleteAsync(id);
+                await Database.GetInstance().Subjects.DeleteAsync(id);
             }
             catch (InvalidOperationException)
             {
@@ -35,13 +35,13 @@ namespace SystemUniversity.Services
 
         public async Task<Subject> GetByIdAsync(int id)
         {
-            return await Database.Subjects.GetByIdAsync(id)
+            return await Database.GetInstance().Subjects.GetByIdAsync(id)
                  ?? throw new KeyNotFoundException("The Id does not correspond to any course");
         }
 
         public async Task<IEnumerable<Subject>> SelectAllAsync()
         {
-            return await Database.Subjects.SelectAllAsync();
+            return await Database.GetInstance().Subjects.SelectAllAsync();
         }
 
         public async Task<Subject> UpdateAsync(int id, string name)
@@ -52,7 +52,7 @@ namespace SystemUniversity.Services
 
             subject.Name = name;
 
-            await Database.Subjects.UpdateAsync(subject);
+            await Database.GetInstance().Subjects.UpdateAsync(subject);
 
             return subject;
         }

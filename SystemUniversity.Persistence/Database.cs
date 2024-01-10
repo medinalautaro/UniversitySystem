@@ -6,10 +6,10 @@ namespace SystemUniversity.Persistence
 {
     public class Database: IDisposable
     {
-        private static readonly NpgsqlDataSource _dataSource;
-        private static Database? instance = null; //TODO preguntar a nico porque pedro lo tiene de esta manera
+        private readonly NpgsqlDataSource _dataSource;
+        private static Database? instance = null; // this way and with a private constructor I make sure that there is only one instance of this database and initilizes when I call for it.
 
-        static Database()
+        private Database() //the mentioned private constructor
         {
             _dataSource = NpgsqlDataSource.Create("Host=127.0.0.1; Username=postgres; Password=frutilla;Database=postgres");
             Professors = new ProfessorRepository(_dataSource);
@@ -17,16 +17,16 @@ namespace SystemUniversity.Persistence
             Subjects = new SubjectRepository(_dataSource);
         }
 
-        public static IProfessorRepository Professors { get; private set; }
-        public static IStudentRepository Students { get; private set; }
-        public static ISubjectRepository Subjects { get; private set; }
+        public IProfessorRepository Professors { get; private set; }
+        public IStudentRepository Students { get; private set; }
+        public ISubjectRepository Subjects { get; private set; }
 
         public void Dispose()
         {
             _dataSource.Dispose();
         }
 
-        public static Database GetInstance()
+        public static Database GetInstance() //creating instance
         {
             if (instance == null)
             {

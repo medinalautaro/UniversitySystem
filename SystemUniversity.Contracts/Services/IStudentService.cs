@@ -13,6 +13,7 @@ namespace SystemUniversity.Contracts.Services
         Task<Student> UpdateAsync(int id, string name, string lastName, string nationalId);
         Task DeleteAsync(int id);
         Task<Student> GetByNationalIdAsync(int nationalId);
+        Task<Student> GetByIdAsync(int id);
         Task<IEnumerable<Student>> SelectAllAsync();
     }
 }

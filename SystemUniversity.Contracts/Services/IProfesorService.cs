@@ -8,6 +8,7 @@ namespace SystemUniversity.Contracts.Services
         Task<Professor> UpdateAsync(int id, string name, string lastName, string nationalId);
         Task DeleteAsync(int id);
         Task<Professor> GetByNationalIdAsync(int nationalId);
+        Task<Professor> GetByIdAsync(int id);
         Task<IEnumerable<Professor>> SelectAllAsync();
 
         
