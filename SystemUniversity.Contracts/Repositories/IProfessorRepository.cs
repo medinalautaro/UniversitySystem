@@ -12,7 +12,6 @@ namespace SystemUniversity.Contracts.Repositories
         Task<Professor?> GetByNationalIdAsync(int national_id);
         Task<bool> ExistsByNationalIdAsync(string national_id);
         Task<List<Professor>> GetBySubjectAsync(Subject subject);
-        Task<Professor?> GetByIdAsync(int id);
         
     }
 }

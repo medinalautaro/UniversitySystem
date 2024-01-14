@@ -10,13 +10,11 @@ namespace SystemUniversity.Contracts.Services
     public interface ISubjectService
     {
         Task<Subject> CreateAsync(string name);
-
         Task<Subject> UpdateAsync(int id, string name);
-
         Task DeleteAsync(int id);
-
         Task<Subject> GetByIdAsync(int id);
-
         Task<IEnumerable<Subject>> SelectAllAsync();
+        Task RegisterProfessorAsync(int professorId, int subjectId);
+        Task RegisterStudentAsync(int studentId, int subjectId);
     }
 }

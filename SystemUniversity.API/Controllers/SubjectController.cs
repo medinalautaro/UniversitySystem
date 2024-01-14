@@ -29,6 +29,29 @@ namespace SystemUniversity.API.Controllers
             };
         }
 
+        [HttpPost("{id}")] //TODO preguntar a nico respecto a porque el remplzao de id por subjectId no funciona
+        public async Task<ActionResult> RegisterStudentToSubjectAsync(int studentId, int subjectId)
+        {
+            try{
+                await _subjectService.RegisterStudentAsync(studentId, subjectId);
+            } catch (KeyNotFoundException ex){
+                return NotFound(ex.Message);
+            }
+            return Ok();
+        }
+        
+        /*
+        [HttpPost("{id}")] //TODO el "id" hace o no hace referencia al subject? me cago en esta mierda
+        public async Task<ActionResult> RegisterProfessorToSubjectAsync(int professorId, int subjectId)
+        {
+            try{
+                await _subjectService.RegisterProfessorAsync(professorId, subjectId);
+            } catch (KeyNotFoundException ex){
+                return NotFound(ex.Message);
+            }
+            return Ok();
+        }
+        */
         [HttpPut]
         public async Task<ActionResult<SubjectDTO>> UpdateAsync(int subjectId, [FromBody] SubjectDTO dto)
         {

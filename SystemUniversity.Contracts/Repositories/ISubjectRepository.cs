@@ -11,7 +11,7 @@ namespace SystemUniversity.Contracts.Repositories
     {
         Task RegisterProfessorAsync(int professorId, int subjectId);
         Task RegisterStudentAsync(int studentId, int subjectId);
-        Task<Subject?> GetByIdAsync(int id);
-
+        Task<bool> ExistsByStudentSubjectAsync(int studentId, int subjectId);
+        Task<bool> ExistsByProfessorSubjectAsync(int professorId, int subjectId);
     }
 }

@@ -92,7 +92,7 @@ namespace SystemUniversity.Persistence.Repositories
             await ExecuteNonQueryAsync(query, new object[] { entity.Name, entity.LastName, entity.NationalId, entity.Id});
         }
 
-        public async Task<Professor?> GetByIdAsync(int id)
+        public override async Task<Professor?> GetByIdAsync(int id)
         {
             string query = "SELECT name,last_name,national_id,id FROM university.professors WHERE id = $1";
 
@@ -106,9 +106,9 @@ namespace SystemUniversity.Persistence.Repositories
             return null;
         }
 
-        public async Task<bool> ExistsByIdAsync(string id)
+        public override async Task<bool> ExistsByIdAsync(int id)
         {
-            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.professors WHERE id = $1)", new[] { id });
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.professors WHERE id = $1)", new object[] { id });
         }
 
         protected Professor MapRowToModel(NpgsqlDataReader reader)
@@ -120,6 +120,5 @@ namespace SystemUniversity.Persistence.Repositories
                     (int)reader["id"]
                     );
         }
-
     }
 }

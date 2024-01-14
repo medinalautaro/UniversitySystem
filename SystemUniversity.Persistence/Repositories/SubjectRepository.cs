@@ -51,7 +51,7 @@ namespace SystemUniversity.Persistence.Repositories
             await ExecuteNonQueryAsync(query, new object[] { entity.Name, entity.Id});
         }
 
-        public async Task<Subject?> GetByIdAsync(int id)
+        public override async Task<Subject?> GetByIdAsync(int id)
         {
             string query = "SELECT name,id FROM university.subjects WHERE id = $1";
 
@@ -83,6 +83,21 @@ namespace SystemUniversity.Persistence.Repositories
                     (string)reader["name"],
                     (int)reader["id"]
                     );
+        }
+
+        public override async Task<bool> ExistsByIdAsync(int id)
+        {
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.subjects WHERE id = $1)", new object[] { id });
+        }
+
+        public async Task<bool> ExistsByStudentSubjectAsync(int studentId, int subjectId)
+        {
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS (SELECT * FROM university.subjects_students WHERE student_id = $1 AND subject_id = $2);", new object[] { studentId, subjectId });
+        }
+
+        public async Task<bool> ExistsByProfessorSubjectAsync(int professorId, int subjectId)
+        {
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS (SELECT * FROM university.professors_students WHERE professor_id = $1 AND subject_id = $2);", new object[] { professorId, subjectId });
         }
     }
 }

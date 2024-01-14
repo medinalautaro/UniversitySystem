@@ -23,6 +23,8 @@ namespace SystemUniversity.Persistence.Repositories
         public abstract Task DeleteAsync(int entityId);
         public abstract Task UpdateAsync(T entity);
         public abstract Task<IEnumerable<T>> SelectAllAsync();
+        public abstract Task<T?> GetByIdAsync(int id);
+        public abstract Task<bool> ExistsByIdAsync(int id);
 
         protected async Task<int> ExecuteNonQueryAsync(string query, object[]? parameters = null)
         {

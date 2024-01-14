@@ -89,7 +89,7 @@ namespace SystemUniversity.Persistence.Repositories
             await ExecuteNonQueryAsync(query, new object[] { entity.Name, entity.LastName, entity.NationalId, entity.Id});
         }
 
-        public async Task<Student?> GetByIdAsync(int id)
+        public override async Task<Student?> GetByIdAsync(int id)
         {
             string query = "SELECT name,last_name,national_id,id FROM university.students WHERE id = $1";
 
@@ -103,11 +103,6 @@ namespace SystemUniversity.Persistence.Repositories
             return null;
         }
 
-        public async Task<bool> ExistsByIdAsync(string id)
-        {
-            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.students WHERE id = $1)", new[] { id });
-        }
-
         protected Student MapRowToModel(NpgsqlDataReader reader)
         {
             return new Student(
@@ -115,6 +110,11 @@ namespace SystemUniversity.Persistence.Repositories
                     (string)reader["last_name"],
                     (string)reader["national_id"],
                     (int)reader["id"]);
+        }
+
+        public override async Task<bool> ExistsByIdAsync(int id)
+        {
+            return await ExecuteScalarAsync<bool>("SELECT EXISTS(SELECT * FROM university.students WHERE id = $1)", new object[] { id });
         }
     }
 }
