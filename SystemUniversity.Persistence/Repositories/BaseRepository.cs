@@ -37,7 +37,7 @@ namespace SystemUniversity.Persistence.Repositories
                 int rowsAffected = await command.ExecuteNonQueryAsync();
                 if (rowsAffected == 0)
                 {
-                    throw new Exception("No se pudo ejecutar la query");
+                    throw new Exception("Query could not execute");
                 }
 
                 return rowsAffected;

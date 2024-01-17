@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SystemUniversity.Contracts.Models;
 using SystemUniversity.Persistence.Repositories;
 using SystemUniversity.Persistence;
+using SystemUniversity.Contracts.Exceptions;
 
 namespace SystemUniversity.Services
 {
@@ -29,20 +30,20 @@ namespace SystemUniversity.Services
             }
             catch (InvalidOperationException)
             {
-                throw new ArgumentException("Id does not exist");
+                throw new NotFoundException("Id does not exist");
             }
         }
 
         public async Task<Student> GetByNationalIdAsync(int nationalId)
         {
             return await Database.GetInstance().Students.GetByNationalIdAsync(nationalId)
-                 ?? throw new KeyNotFoundException("The National Id does not correspond to any professor");
+                 ?? throw new NotFoundException("The National Id does not correspond to any student");
         }
 
         public async Task<Student> GetByIdAsync(int id)
         {
             return await Database.GetInstance().Students.GetByIdAsync(id)
-                 ?? throw new KeyNotFoundException("The Id does not correspond to any course");
+                 ?? throw new NotFoundException("The Id does not correspond to any student");
         }
 
         public async Task<IEnumerable<Student>> SelectAllAsync()
@@ -69,22 +70,22 @@ namespace SystemUniversity.Services
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Name cannot be empty");
+                throw new BadRequestException("Name cannot be empty");
             }
 
             if (string.IsNullOrWhiteSpace(lastName))
             {
-                throw new ArgumentNullException("Surname cannot be empty");
+                throw new BadRequestException("Surname cannot be empty");
             }
 
             if (string.IsNullOrWhiteSpace(nationalId))
             {
-                throw new ArgumentNullException("National Id cannot be empty");
+                throw new BadRequestException("National Id cannot be empty");
             }
             
             if (checkIdRepeted && await Database.GetInstance().Students.ExistsByNationalIdAsync(nationalId))
             {
-                throw new ArgumentException("National Id already exists");
+                throw new BadRequestException("National Id already exists");
             }
         }
     }

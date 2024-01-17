@@ -29,42 +29,24 @@ namespace SystemUniversity.API.Controllers
             };
         }
 
-        [HttpPost("{id}")] //TODO preguntar a nico respecto a porque el remplzao de id por subjectId no funciona
-        public async Task<ActionResult> RegisterStudentToSubjectAsync(int studentId, int subjectId)
+        [HttpPost("{subjectId}/students")] //TODO change studentId to FromBody
+        public async Task RegisterStudentToSubjectAsync(int studentId, int subjectId)
         {
-            try{
-                await _subjectService.RegisterStudentAsync(studentId, subjectId);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            }
-            return Ok();
+            await _subjectService.RegisterStudentAsync(studentId, subjectId);
         }
         
-        /*
-        [HttpPost("{id}")] //TODO el "id" hace o no hace referencia al subject? me cago en esta mierda
-        public async Task<ActionResult> RegisterProfessorToSubjectAsync(int professorId, int subjectId)
+        
+        [HttpPost("{subjectId}/professors")] 
+        public async Task RegisterProfessorToSubjectAsync(int professorId, int subjectId)
         {
-            try{
-                await _subjectService.RegisterProfessorAsync(professorId, subjectId);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            }
-            return Ok();
+            await _subjectService.RegisterProfessorAsync(professorId, subjectId);
         }
-        */
+        
         [HttpPut]
-        public async Task<ActionResult<SubjectDTO>> UpdateAsync(int subjectId, [FromBody] SubjectDTO dto)
+        public async Task<SubjectDTO> UpdateAsync(int subjectId, [FromBody] SubjectDTO dto)
         {
             Subject subject;
-            try{
-                subject = await _subjectService.UpdateAsync(subjectId, dto.Name);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            } catch (ArgumentNullException ex){  //Argument null exception inherits from ArgumentException so it has to be catched before.
-                return BadRequest(ex.Message);
-            } catch (ArgumentException ex){
-                return BadRequest(ex.Message);
-            } 
+            subject = await _subjectService.UpdateAsync(subjectId, dto.Name); 
             
             return new SubjectDTO 
             {
@@ -74,26 +56,16 @@ namespace SystemUniversity.API.Controllers
         }
 
         [HttpDelete]
-        public async Task<ActionResult> DeleteAsync(int subjectId)
+        public async Task DeleteAsync(int subjectId)
         {
-            try{
-                await _subjectService.DeleteAsync(subjectId);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            }
-            return Ok();
+            await _subjectService.DeleteAsync(subjectId);
         }
 
         [HttpGet("{id}")] // /subjects/{id}
-        public async Task<ActionResult<SubjectDTO>> GetByIdAsync(int id)
+        public async Task<SubjectDTO> GetByIdAsync(int id)
         {
             Subject subject;
-            
-            try{
-                subject = await _subjectService.GetByIdAsync(id);
-            } catch (KeyNotFoundException ex){
-               return NotFound(ex.Message);
-            }
+            subject = await _subjectService.GetByIdAsync(id);
 
             return new SubjectDTO
             {
@@ -104,20 +76,15 @@ namespace SystemUniversity.API.Controllers
 
         
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<SubjectDTO>>> SelectAllAsync()
+        public async Task<IEnumerable<SubjectDTO>> SelectAllAsync()
         {
             IEnumerable<Subject> subjects = new List<Subject>();
-            
-            try{
-                subjects = await _subjectService.SelectAllAsync();
-            } catch (KeyNotFoundException ex){
-               return NotFound(ex.Message);
-            }
+            subjects = await _subjectService.SelectAllAsync();
 
-            return Ok(subjects.Select(s => new SubjectDTO{
+            return subjects.Select(s => new SubjectDTO{
                 Id = s.Id,
                 Name = s.Name,
-            }));
+            });
         }
     }
 }

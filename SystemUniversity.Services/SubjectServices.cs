@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using SystemUniversity.Contracts.Models;
 using SystemUniversity.Persistence.Repositories;
 using SystemUniversity.Persistence;
+using SystemUniversity.Contracts.Exceptions;
 
 namespace SystemUniversity.Services
 {
@@ -29,14 +30,14 @@ namespace SystemUniversity.Services
             }
             catch (InvalidOperationException)
             {
-                throw new ArgumentException("Id does not exist");
+                throw new NotFoundException("Id does not exist");
             }
         }
 
         public async Task<Subject> GetByIdAsync(int id)
         {
             return await Database.GetInstance().Subjects.GetByIdAsync(id)
-                 ?? throw new KeyNotFoundException("The Id does not correspond to any course");
+                 ?? throw new NotFoundException("The Id does not correspond to any course");
         }
 
         public Task RegisterProfessorAsync(int professorId, int subjectId)
@@ -47,17 +48,18 @@ namespace SystemUniversity.Services
         public async Task RegisterStudentAsync(int studentId, int subjectId)
         {
             bool student = await Database.GetInstance().Students.ExistsByIdAsync(studentId);
-            bool subject = await Database.GetInstance().Subjects.ExistsByIdAsync(subjectId);
-            bool student_subject = await Database.GetInstance().Subjects.ExistsByStudentSubjectAsync(studentId,subjectId);
-
             if(student == false){
-                throw new KeyNotFoundException("The Id does not correspond to any student");
+                throw new NotFoundException("The Id does not correspond to any student");
             }
+
+            bool subject = await Database.GetInstance().Subjects.ExistsByIdAsync(subjectId);
             if(subject == false){
-                throw new KeyNotFoundException("The Id does not correspond to any course");
+                throw new NotFoundException("The Id does not correspond to any course");
             }
+
+            bool student_subject = await Database.GetInstance().Subjects.ExistsByStudentSubjectAsync(studentId,subjectId);
             if(student_subject == true){
-                throw new KeyNotFoundException("The student is already registered on that subject");
+                throw new NotFoundException("The student is already registered on that subject");
             }
 
             await Database.GetInstance().Subjects.RegisterStudentAsync(studentId, subjectId);
@@ -85,7 +87,7 @@ namespace SystemUniversity.Services
         {
             if (string.IsNullOrWhiteSpace(name))
             {
-                throw new ArgumentNullException("Name cannot be empty");
+                throw new BadRequestException("Name cannot be empty");
             }  
         }
     }

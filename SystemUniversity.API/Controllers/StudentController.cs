@@ -33,15 +33,11 @@ namespace SystemUniversity.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<StudentDTO>> UpdateAsync(int studentId, [FromBody] StudentCreateDTO dto)
+        public async Task<StudentDTO> UpdateAsync(int studentId, [FromBody] StudentCreateDTO dto)
         {
             Student student;
-            try{
-                student = await _studentService.UpdateAsync(studentId, dto.Name, dto.LastName, dto.NationalId);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            }
-            
+            student = await _studentService.UpdateAsync(studentId, dto.Name, dto.LastName, dto.NationalId);
+
             return new StudentDTO
             {
                 Id = student.Id,
@@ -54,23 +50,14 @@ namespace SystemUniversity.API.Controllers
         [HttpDelete]
         public async Task DeleteAsync(int studentId)
         {
-            try{
-                await _studentService.DeleteAsync(studentId);
-            } catch (KeyNotFoundException ex){
-               //return NotFound(ex.Message); TODO returning the not found causes an error
-            }
+            await _studentService.DeleteAsync(studentId);
         }
 
         [HttpGet("{id}")] // /subjects/{id}
-        public async Task<ActionResult<StudentDTO>> GetByIdAsync(int id)
+        public async Task<StudentDTO> GetByIdAsync(int id)
         {
             Student student;
-            
-            try{
-                student = await _studentService.GetByIdAsync(id);
-            } catch (KeyNotFoundException ex){
-               return NotFound(ex.Message);
-            }
+            student = await _studentService.GetByIdAsync(id);
 
             return new StudentDTO
             {
@@ -86,12 +73,7 @@ namespace SystemUniversity.API.Controllers
         public async Task<IEnumerable<StudentDTO>> SelectAllAsync()
         {
             IEnumerable<Student> student = new List<Student>();
-            
-            try{
-                student = await _studentService.SelectAllAsync();
-            } catch (KeyNotFoundException ex){
-               //return NotFound(ex.Message); TODO returning the not found causes an error
-            }
+            student = await _studentService.SelectAllAsync();
 
             return student.Select(s => new StudentDTO
             {

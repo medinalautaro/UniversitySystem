@@ -10,7 +10,7 @@ namespace SystemUniversity.API.Controllers
 {
     [ApiController]
     [Route("professors")]
-    public class ProfessorController : ControllerBase
+    public class ProfessorController : ControllerBase  //TODO sacar trycatch de los controladores
     {
         private IProfessorService _professorService;
         public ProfessorController()
@@ -33,14 +33,10 @@ namespace SystemUniversity.API.Controllers
         }
 
         [HttpPut]
-        public async Task<ActionResult<ProfessorDTO>> UpdateAsync(int professorId, [FromBody] ProfessorCreateDTO dto)
+        public async Task<ProfessorDTO> UpdateAsync(int professorId, [FromBody] ProfessorCreateDTO dto)
         {
             Professor professor;
-            try{
-                professor = await _professorService.UpdateAsync(professorId, dto.Name, dto.LastName, dto.NationalId);
-            } catch (KeyNotFoundException ex){
-                return NotFound(ex.Message);
-            }
+            professor = await _professorService.UpdateAsync(professorId, dto.Name, dto.LastName, dto.NationalId);
             
             return new ProfessorDTO
             {
@@ -54,23 +50,15 @@ namespace SystemUniversity.API.Controllers
         [HttpDelete]
         public async Task DeleteAsync(int professorId)
         {
-            try{
-                await _professorService.DeleteAsync(professorId);
-            } catch (KeyNotFoundException ex){
-               //return NotFound(ex.Message); TODO returning the not found causes an error
-            }
+            await _professorService.DeleteAsync(professorId);
+
         }
 
         [HttpGet("{id}")] // /subjects/{id}
-        public async Task<ActionResult<ProfessorDTO>> GetByIdAsync(int id)
+        public async Task<ProfessorDTO> GetByIdAsync(int id)
         {
             Professor professor;
-            
-            try{
-                professor = await _professorService.GetByIdAsync(id);
-            } catch (KeyNotFoundException ex){
-               return NotFound(ex.Message);
-            }
+            professor = await _professorService.GetByIdAsync(id);
 
             return new ProfessorDTO
             {
@@ -86,12 +74,7 @@ namespace SystemUniversity.API.Controllers
         public async Task<IEnumerable<ProfessorDTO>> SelectAllAsync()
         {
             IEnumerable<Professor> professor = new List<Professor>();
-            
-            try{
-                professor = await _professorService.SelectAllAsync();
-            } catch (KeyNotFoundException ex){
-               //return NotFound(ex.Message); TODO returning the not found causes an error
-            }
+            professor = await _professorService.SelectAllAsync();
 
             return professor.Select(s => new ProfessorDTO
             {
